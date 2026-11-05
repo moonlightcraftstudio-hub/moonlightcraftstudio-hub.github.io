@@ -1,10 +1,322 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="ko" data-l="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MOONLIGHT CRAFT</title>
-<style>:root{color-scheme:light dark}body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",Roboto,sans-serif;max-width:640px;margin:0 auto;padding:48px 18px;line-height:1.7}h1{font-size:1.6rem;margin:0 0 4px}h2{font-size:1.1rem;margin:32px 0 4px}p{margin:4px 0}</style>
-</head><body>
-<h1>MOONLIGHT CRAFT</h1>
-<h2>좀비 컬러 디펜스 · Zombie Color Defense</h2>
-<p><a href="zombie-color-defense/privacy/">개인정보처리방침 · Privacy Policy</a></p>
-<p>문의 · Contact: <a href="mailto:moonlight.craft.studio@gmail.com">moonlight.craft.studio@gmail.com</a></p>
-</body></html>
+<meta name="description" content="달빛 아래에서 작은 게임을 만드는 MOONLIGHT CRAFT. 지금 만들고 있는 게임은 좀비 컬러 디펜스입니다.">
+<meta name="theme-color" content="#1c133a">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MOONLIGHT CRAFT">
+<meta property="og:title" content="MOONLIGHT CRAFT">
+<meta property="og:description" content="달빛 아래에서 작은 게임을 만듭니다. Small games, made by moonlight.">
+<meta property="og:url" content="https://moonlightcraftstudio-hub.github.io/">
+<meta property="og:image" content="https://moonlightcraftstudio-hub.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/galmuri11-bold.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+(function () {
+  var q = null, s = null;
+  try { q = new URLSearchParams(location.search).get('lang'); s = localStorage.getItem('mc-lang'); } catch (e) {}
+  var l = (q === 'ko' || q === 'en') ? q : (s === 'ko' || s === 'en') ? s
+    : ((navigator.language || 'ko').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en');
+  document.documentElement.setAttribute('data-l', l);
+  document.documentElement.lang = l;
+})();
+</script>
+<style>
+/* Layout: one long night scene. The sky holds the studio's ident, the street holds the game's town, and the game sits on that street. */
+@font-face { font-family: "Galmuri11"; src: url(assets/fonts/galmuri11-bold.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Jua ZCD"; src: url(assets/fonts/jua-zcd.woff2) format("woff2"); font-display: swap; }
+:root {
+  color-scheme: dark;
+  --sky-top: #1c133a;
+  --plum: #4c2662;
+  --dusk: #8b3f6e;
+  --rose: #d4656c;
+  --glow: #f09a6b;
+  --roof: #2f1d44;
+  --street: #1e1530;
+  --kerb: #3c2c5c;
+  --gold: #fff1a8;
+  --sun: #ffc72a;
+  --navy: #1b2a44;
+  --lilac: #c9bce6;
+  --text: #f3edff;
+  --cream: #fff6e3;
+  --ink: #2a1f46;
+  --green: #16bb77;
+  --green-hi: #35e296;
+  --green-lo: #0c8a56;
+  --grey: #cfc9dd;
+  --grey-lo: #9d95b3;
+  --red: #ff6b6b;
+  --blue: #5aa9ff;
+  --violet: #b083ff;
+  --pixel: "Galmuri11", "Apple SD Gothic Neo", "Noto Sans KR", monospace;
+  --body: "Jua ZCD", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --px: 3;
+  --shop: clamp(72px, 10.32vw, 132px);
+  --hero: clamp(56px, 10.32vw, 132px);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--street); color: var(--text); font: 400 18px/1.65 var(--body); word-break: keep-all; overflow-wrap: break-word; -webkit-text-size-adjust: 100%; }
+html[data-l="ko"] .en, html[data-l="en"] .ko { display: none !important; }
+i { display: block; font-style: normal; }
+a { color: var(--gold); text-underline-offset: 3px; }
+a:hover { color: #fff; }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 4px; }
+.wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+
+/* ---------- sky ---------- */
+.sky { position: relative; overflow: hidden; background: linear-gradient(to bottom, var(--sky-top) 0, #2a1846 26%, var(--plum) 54%, var(--dusk) 76%, var(--rose) 91%, var(--glow) 100%); }
+.stars, .stars2 { position: absolute; inset: 0; image-rendering: pixelated; -webkit-mask-image: linear-gradient(#000 45%, transparent 78%); mask-image: linear-gradient(#000 45%, transparent 78%); }
+.stars { background: url(assets/stars.png) 0 0 / 512px 512px; }
+.stars2 { background: url(assets/stars2.png) 90px 40px / 512px 512px; animation: twinkle 3.6s steps(3) infinite alternate; }
+@keyframes twinkle { from { opacity: .25; } to { opacity: 1; } }
+.moon { position: absolute; top: 28px; right: max(20px, 7vw); width: 120px; height: 120px; background: url(assets/moon.png) 0 0 / 100% 100%; image-rendering: pixelated; filter: drop-shadow(0 0 26px rgba(255, 233, 170, .45)); }
+.top { position: relative; display: flex; justify-content: flex-start; padding-top: max(18px, env(safe-area-inset-top, 0px)); }
+.lang { display: inline-flex; border: 2px solid rgba(255, 241, 168, .35); border-radius: 8px; overflow: hidden; }
+.lang button { appearance: none; border: 0; background: transparent; color: var(--lilac); font: 700 12px/1 var(--pixel); padding: 9px 12px; min-height: 36px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--gold); color: var(--ink); }
+.ident { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding-block: 34px 28px; }
+.emblem { position: relative; flex: none; width: calc(64px * var(--px)); height: calc(60px * var(--px)); background: url(assets/emblem.png) 0 0 / 100% 100%; image-rendering: pixelated; }
+.emblem::before { content: ""; position: absolute; inset: -22%; z-index: -1; background: radial-gradient(closest-side, rgba(155, 201, 224, .32), transparent); }
+.flame { position: absolute; top: calc(28px * var(--px)); width: calc(7px * var(--px)); height: calc(11px * var(--px)); background: url(assets/flame.png) 0 0 / 400% 100%; image-rendering: pixelated; animation: flame .62s steps(4) infinite; }
+.f1 { left: calc(7px * var(--px)); }
+.f2 { left: calc(51px * var(--px)); animation-delay: -.2s; }
+@keyframes flame { to { background-position: 133.34% 0; } }
+h1 { margin: 0; font: 700 48px/1.08 var(--pixel); color: var(--gold); text-shadow: 0 4px 0 var(--navy); letter-spacing: 0; }
+.studio { margin: 12px 0 0; font: 700 12px/1 var(--pixel); letter-spacing: .5em; color: var(--lilac); }
+.lead { margin: 18px 0 0; font-size: 21px; line-height: 1.5; color: #fff; text-shadow: 0 2px 0 rgba(27, 18, 50, .55); }
+.skyline { position: relative; height: 140px; background: url(assets/skyline.png) center bottom / 640px 140px repeat-x; image-rendering: pixelated; }
+
+/* ---------- street: the game's lobby, closed shops light up one by one ---------- */
+.street { position: relative; overflow: hidden; height: calc(var(--shop) + var(--hero) * .62); background: linear-gradient(to bottom, var(--roof) 0, var(--roof) var(--shop), var(--kerb) var(--shop), var(--kerb) calc(var(--shop) + 4px), #281c42 calc(var(--shop) + 4px), var(--street) 100%); }
+.shops { position: absolute; top: 0; left: 50%; display: flex; transform: translateX(-50%); }
+.shop { position: relative; flex: none; width: var(--shop); height: var(--shop); background: url(assets/shops.webp) calc(var(--n) * 20%) 100% / 600% 200%; }
+.shop::after { content: ""; position: absolute; inset: 0; background: url(assets/shops.webp) calc(var(--n) * 20%) 0 / 600% 200%; animation: on .3s steps(2) calc(.5s + var(--o) * .22s) both; }
+@keyframes on { from { opacity: 0; } to { opacity: 1; } }
+.cast { position: absolute; bottom: 0; left: 50%; display: flex; transform: translateX(-50%); }
+.hero { flex: none; width: var(--hero); height: var(--hero); background: url(assets/heroes.webp) calc(var(--p) * 33.3333%) calc(var(--r) * 20%) / 400% 600%; animation: bob 1.1s steps(2) calc(var(--r) * -.17s) infinite alternate; }
+@keyframes bob { to { transform: translateY(-3px); } }
+
+/* ---------- the game ---------- */
+.game { padding-block: 44px 20px; }
+.game-grid { display: grid; gap: 34px; }
+.about { min-width: 0; display: grid; gap: 18px; justify-items: start; }
+.eyebrow { margin: 0; font: 700 16px/1.3 var(--pixel); color: var(--sun); }
+h2 { margin: 0; line-height: 1; }
+.logo { display: block; width: min(100%, 340px); height: auto; }
+.word { display: block; font: 700 36px/1.2 var(--pixel); text-shadow: 0 3px 0 #120b22; }
+.tag { margin: 0; font-size: 21px; line-height: 1.5; color: #fff; max-width: 34em; }
+.story { margin: 0; color: var(--lilac); max-width: 34em; }
+.facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.facts li { display: flex; gap: 10px; align-items: baseline; }
+.facts li::before { content: ""; flex: none; width: 12px; height: 12px; border-radius: 3px; background: var(--c); box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .22), inset 0 2px 0 rgba(255, 255, 255, .4); transform: translateY(1px); }
+.note { width: 100%; max-width: 460px; background: var(--cream); color: var(--ink); border-radius: 16px; padding: 0 18px 16px; box-shadow: 0 6px 0 #b9a98a; }
+.note h3 { margin: -14px auto 12px; width: fit-content; padding: 9px 22px; background: #33214f; color: var(--sun); font: 700 16px/1 var(--pixel); border-radius: 10px; box-shadow: 0 3px 0 #1a1030; }
+.note ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.note small { display: block; margin-top: 10px; font-size: 15px; color: #6a5d85; }
+.status { margin: 0; color: var(--lilac); max-width: 34em; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.btn { display: inline-block; padding: 14px 22px 17px; border-radius: 12px; font: 700 16px/1.1 var(--pixel); text-decoration: none; }
+.btn.off { background: linear-gradient(to bottom, #dfdaea 0 50%, var(--grey) 50% 100%); color: var(--ink); box-shadow: inset 0 -5px 0 var(--grey-lo); }
+
+/* screenshots: the feature graphic's tilted cards */
+.shots { min-width: 0; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 2px 16px; -webkit-overflow-scrolling: touch; }
+.shot { flex: none; width: min(68vw, 280px); margin: 0; scroll-snap-align: center; border: 6px solid var(--cream); border-radius: 18px; overflow: hidden; background: var(--sky-top); box-shadow: 0 10px 0 rgba(10, 6, 22, .55); }
+.shot img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; }
+
+/* video */
+.reel { padding-block: 26px 10px; display: grid; gap: 14px; }
+.reel h3, .town h3 { margin: 0; font: 700 24px/1.25 var(--pixel); color: var(--gold); text-shadow: 0 3px 0 #120b22; }
+.reel video { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; height: auto; background: #000; border: 6px solid var(--cream); border-radius: 18px; box-shadow: 0 10px 0 rgba(10, 6, 22, .55); }
+
+/* neighbours */
+.town { padding-block: 40px 30px; display: grid; gap: 10px; }
+.town p { margin: 0; color: var(--lilac); max-width: 34em; }
+.crowd { display: flex; overflow: hidden; margin-top: 8px; gap: 2px; border-bottom: 4px solid var(--kerb); }
+.face { flex: none; width: 76px; height: 76px; background: url(assets/neighbors.webp) calc(var(--x) * 20%) calc(var(--y) * 25%) / 600% 500%; }
+
+footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-bottom, 0px)); }
+.foot { display: grid; gap: 14px; color: var(--lilac); font-size: 17px; }
+.foot p { margin: 0; }
+.foot .mini { font-size: 14px; color: #998cb8; }
+.foot-name { font: 700 16px/1.2 var(--pixel); color: var(--gold); }
+
+@media (min-width: 720px) {
+  :root { --px: 4; }
+  .ident { flex-direction: row; align-items: center; gap: 44px; padding-block: 30px 34px; }
+  h1 { font-size: 72px; text-shadow: 0 6px 0 var(--navy); }
+  .studio { font-size: 16px; }
+  .lead { font-size: 24px; }
+  .moon { width: 192px; height: 192px; top: 44px; }
+  .skyline { height: 210px; background-size: 960px 210px; }
+  .top { justify-content: flex-start; }
+  .word { font-size: 48px; }
+  .reel h3, .town h3 { font-size: 36px; }
+}
+@media (min-width: 1000px) {
+  .game { padding-block: 60px 20px; }
+  .game-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: 40px; align-items: center; }
+  .shots { display: block; position: relative; height: 620px; overflow: visible; padding: 0; }
+  .shot { position: absolute; width: 270px; }
+  .shot.s1 { left: 0; top: 74px; transform: rotate(-5deg); z-index: 1; }
+  .shot.s2 { left: calc(50% - 150px); top: 0; width: 300px; z-index: 2; }
+  .shot.s3 { right: 0; top: 74px; transform: rotate(5deg); z-index: 1; }
+  .shot.s4 { display: none; }
+  .reel { padding-block: 40px 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stars2, .flame, .hero, .shop::after { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="sky">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="stars2" aria-hidden="true"></div>
+  <div class="moon" aria-hidden="true"></div>
+  <div class="wrap top">
+    <div class="lang" role="group" aria-label="언어 · Language">
+      <button type="button" id="l-ko" data-set="ko" aria-pressed="true">한국어</button>
+      <button type="button" id="l-en" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+  <div class="wrap ident">
+    <div class="emblem" role="img" aria-label="MOONLIGHT CRAFT"><i class="flame f1"></i><i class="flame f2"></i></div>
+    <div>
+      <h1>MOONLIGHT<br>CRAFT</h1>
+      <p class="studio">STUDIO</p>
+      <p class="lead ko" lang="ko">달빛 아래에서 작은 게임을 만듭니다.</p>
+      <p class="lead en" lang="en">Small games, made by moonlight.</p>
+    </div>
+  </div>
+  <div class="skyline" aria-hidden="true"></div>
+</header>
+
+<div class="street" aria-hidden="true">
+  <div class="shops">
+    <i class="shop" style="--n:2;--o:7"></i><i class="shop" style="--n:3;--o:6"></i><i class="shop" style="--n:4;--o:5"></i><i class="shop" style="--n:5;--o:4"></i><i class="shop" style="--n:0;--o:3"></i>
+    <i class="shop" style="--n:1;--o:2"></i><i class="shop" style="--n:2;--o:1"></i><i class="shop" style="--n:3;--o:0"></i><i class="shop" style="--n:4;--o:1"></i><i class="shop" style="--n:5;--o:2"></i>
+    <i class="shop" style="--n:0;--o:3"></i><i class="shop" style="--n:1;--o:4"></i><i class="shop" style="--n:2;--o:5"></i><i class="shop" style="--n:3;--o:6"></i><i class="shop" style="--n:4;--o:7"></i>
+  </div>
+  <div class="cast">
+    <i class="hero" style="--r:0;--p:0"></i><i class="hero" style="--r:1;--p:0"></i><i class="hero" style="--r:2;--p:0"></i><i class="hero" style="--r:3;--p:0"></i><i class="hero" style="--r:4;--p:0"></i><i class="hero" style="--r:5;--p:1"></i>
+  </div>
+</div>
+
+<main class="game" id="zombie-color-defense">
+  <div class="wrap game-grid">
+    <div class="about">
+      <p class="eyebrow ko" lang="ko">지금 만들고 있는 게임</p>
+      <p class="eyebrow en" lang="en">Now in the workshop</p>
+      <h2>
+        <img class="logo ko" lang="ko" src="assets/zcd_logo.webp" width="640" height="385" alt="좀비 컬러 디펜스">
+        <span class="word en" lang="en"><span style="color:#62d96b">ZOMBIE</span><br><span style="color:var(--red)">CO</span><span style="color:var(--sun)">LOR</span> <span style="color:var(--blue)">DE</span><span style="color:var(--violet)">FE</span><span style="color:var(--red)">NSE</span></span>
+      </h2>
+      <p class="tag ko" lang="ko">물감총으로 같은 색 젤리를 터뜨려 갇힌 이웃을 구하고, 동네를 되살리는 컬러 퍼즐이에요.</p>
+      <p class="tag en" lang="en">Splash paint on same-color jellies, rescue the neighbours and revive your town.</p>
+      <p class="story ko" lang="ko">아무도 다치지 않아요. 젤리에서 풀려난 이웃들은 잠옷 차림으로 집에 돌아간답니다.</p>
+      <p class="story en" lang="en">Nobody gets hurt. Neighbours rescued from their jelly shells simply walk home in their pajamas.</p>
+      <ul class="facts ko" lang="ko">
+        <li style="--c:#62d96b">150개 레벨과 150화 만화 이야기</li>
+        <li style="--c:var(--red)">10레벨마다 기다리는 거대한 보스 젤리</li>
+        <li style="--c:var(--sun)">30레벨부터 오늘의 판과 끝없는 구조</li>
+        <li style="--c:var(--blue)">친구와 함께 구조, 컴퓨터와 대결 (베타)</li>
+      </ul>
+      <ul class="facts en" lang="en">
+        <li style="--c:#62d96b">150 levels and a 150-episode comic</li>
+        <li style="--c:var(--red)">A giant boss jelly every 10 levels</li>
+        <li style="--c:var(--sun)">A daily board and Endless Rescue from level 30</li>
+        <li style="--c:var(--blue)">Rescue with a friend, or race the computer (beta)</li>
+      </ul>
+      <div class="note">
+        <h3 class="ko" lang="ko">약속</h3>
+        <h3 class="en" lang="en">Our promise</h3>
+        <ul class="ko" lang="ko">
+          <li>하트 제한이 없어요.</li>
+          <li>뽑기가 없어요.</li>
+          <li>모든 판은 아이템 없이 깰 수 있어요.</li>
+        </ul>
+        <ul class="en" lang="en">
+          <li>No lives or energy.</li>
+          <li>No loot boxes.</li>
+          <li>Every level can be cleared without items.</li>
+        </ul>
+        <small class="ko" lang="ko">광고와 인앱 구매가 있어요.</small>
+        <small class="en" lang="en">Contains ads and in-app purchases.</small>
+      </div>
+      <p class="status ko" lang="ko">지금은 비공개 테스트 중이에요. 출시하면 여기에 Google Play 링크를 올릴게요.</p>
+      <p class="status en" lang="en">In closed testing now. The Google Play link goes here at launch.</p>
+      <div class="actions">
+        <span class="btn off ko" lang="ko">Google Play 곧 출시</span>
+        <span class="btn off en" lang="en">Coming to Google Play</span>
+        <a class="ko" lang="ko" href="zombie-color-defense/privacy/">개인정보처리방침</a>
+        <a class="en" lang="en" href="zombie-color-defense/privacy/">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="shots" tabindex="0" role="group" aria-label="게임 화면 · Screenshots">
+      <figure class="shot s1"><img class="ko" lang="ko" src="assets/shot_ko_rescue.webp" width="540" height="960" loading="lazy" alt="젤리에 갇힌 이웃을 구하는 판 화면"><img class="en" lang="en" src="assets/shot_en_rescue.webp" width="540" height="960" loading="lazy" alt="A level: rescuing neighbours stuck in jelly"></figure>
+      <figure class="shot s2"><img class="ko" lang="ko" src="assets/shot_ko_boss.webp" width="540" height="960" loading="lazy" alt="기술을 쓰는 보스 젤리와 싸우는 화면"><img class="en" lang="en" src="assets/shot_en_boss.webp" width="540" height="960" loading="lazy" alt="A boss jelly with its own move"></figure>
+      <figure class="shot s3"><img class="ko" lang="ko" src="assets/shot_ko_town.webp" width="540" height="960" loading="lazy" alt="구할수록 되살아나는 동네와 다섯 생존자"><img class="en" lang="en" src="assets/shot_en_town.webp" width="540" height="960" loading="lazy" alt="The town coming back to life, with the five survivors"></figure>
+      <figure class="shot s4"><img class="ko" lang="ko" src="assets/shot_ko_combo.webp" width="540" height="960" loading="lazy" alt="콤보를 이어 이웃을 구하는 화면"><img class="en" lang="en" src="assets/shot_en_combo.webp" width="540" height="960" loading="lazy" alt="Chaining combos to rescue more neighbours"></figure>
+    </div>
+  </div>
+
+  <section class="wrap reel">
+    <h3 class="ko" lang="ko">30초로 보기</h3>
+    <h3 class="en" lang="en">See it in 30 seconds</h3>
+    <video class="ko" lang="ko" controls playsinline preload="none" poster="assets/promo_ko.webp" aria-label="좀비 컬러 디펜스 홍보 영상"><source src="assets/promo_ko.mp4" type="video/mp4"></video>
+    <video class="en" lang="en" controls playsinline preload="none" poster="assets/promo_en.webp" aria-label="Zombie Color Defense trailer"><source src="assets/promo_en.mp4" type="video/mp4"></video>
+  </section>
+
+  <section class="wrap town">
+    <h3 class="ko" lang="ko">이웃을 구하면 동네에 불이 켜져요</h3>
+    <h3 class="en" lang="en">Rescue neighbours, light up the town</h3>
+    <p class="ko" lang="ko">구한 이웃은 도감에 모이고, 많이 구할수록 가게가 다시 문을 열어요.</p>
+    <p class="en" lang="en">Everyone you rescue joins your album, and the more you save, the more shops open again.</p>
+    <div class="crowd" aria-hidden="true">
+      <i class="face" style="--x:0;--y:0"></i><i class="face" style="--x:1;--y:0"></i><i class="face" style="--x:2;--y:0"></i><i class="face" style="--x:3;--y:0"></i><i class="face" style="--x:4;--y:0"></i><i class="face" style="--x:5;--y:0"></i>
+      <i class="face" style="--x:0;--y:1"></i><i class="face" style="--x:1;--y:1"></i><i class="face" style="--x:2;--y:1"></i><i class="face" style="--x:3;--y:1"></i><i class="face" style="--x:4;--y:1"></i><i class="face" style="--x:5;--y:1"></i>
+      <i class="face" style="--x:0;--y:2"></i><i class="face" style="--x:1;--y:2"></i><i class="face" style="--x:2;--y:2"></i><i class="face" style="--x:3;--y:2"></i><i class="face" style="--x:4;--y:2"></i><i class="face" style="--x:5;--y:2"></i>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p class="foot-name">MOONLIGHT CRAFT</p>
+    <p><span class="ko" lang="ko">문의</span><span class="en" lang="en">Contact</span>: <a href="mailto:moonlight.craft.studio@gmail.com">moonlight.craft.studio@gmail.com</a></p>
+    <p class="mini">© 2026 MOONLIGHT CRAFT · <span class="ko" lang="ko">글꼴</span><span class="en" lang="en">Fonts</span>: <a href="assets/fonts/Galmuri_OFL_License.txt">Galmuri</a>, <a href="assets/fonts/Jua_OFL_License.txt">Jua</a> (SIL OFL 1.1)</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement, buttons = document.querySelectorAll('.lang button');
+  function show(l) {
+    root.setAttribute('data-l', l);
+    root.lang = l;
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === l)); });
+    document.querySelectorAll('video').forEach(function (v) { v.pause(); });
+  }
+  show(root.getAttribute('data-l'));
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var l = b.getAttribute('data-set');
+      show(l);
+      try { localStorage.setItem('mc-lang', l); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>

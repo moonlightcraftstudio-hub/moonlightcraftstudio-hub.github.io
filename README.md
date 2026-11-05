@@ -1,3 +1,3 @@
 # MOONLIGHT CRAFT
 
-Public site: privacy policies and app-ads.txt. https://moonlightcraftstudio-hub.github.io
+Public site: studio home, privacy policies and app-ads.txt. https://moonlightcraftstudio-hub.github.io
