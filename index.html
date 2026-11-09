@@ -142,6 +142,13 @@ h2 { margin: 0; line-height: 1; }
 .town { padding-block: 40px 30px; display: grid; gap: 10px; }
 .town p { margin: 0; color: var(--lilac); max-width: 34em; }
 .crowd { display: flex; overflow: hidden; margin-top: 8px; gap: 2px; border-bottom: 4px solid var(--kerb); }
+.life { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; max-width: 40em; }
+.life li { position: relative; padding-left: 22px; }
+.life li::before { content: ""; position: absolute; left: 0; top: .55em; width: 10px; height: 10px; border-radius: 3px; background: var(--sun); box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .22); }
+.days { min-width: 0; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 14px 2px 16px; -webkit-overflow-scrolling: touch; }
+.day { flex: none; width: min(42vw, 200px); margin: 0; scroll-snap-align: start; }
+.day img { display: block; width: 100%; height: auto; aspect-ratio: 600 / 1043; border: 5px solid var(--cream); border-radius: 14px; background: var(--sky-top); box-shadow: 0 8px 0 rgba(10, 6, 22, .55); image-rendering: auto; }
+.day figcaption { margin-top: 12px; text-align: center; font: 700 14px/1.2 var(--pixel); color: var(--gold); }
 .face { flex: none; width: 76px; height: 76px; background: url(assets/neighbors.webp) calc(var(--x) * 20%) calc(var(--y) * 25%) / 600% 500%; }
 
 footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-bottom, 0px)); }
@@ -172,6 +179,8 @@ footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-
   .shot.s3 { right: 0; top: 74px; transform: rotate(5deg); z-index: 1; }
   .shot.s4 { display: none; }
   .reel { padding-block: 40px 10px; }
+  .days { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); overflow: visible; }
+  .day { width: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
   .stars2, .flame, .hero, .shop::after { animation: none; }
@@ -227,16 +236,18 @@ footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-
       <p class="story ko" lang="ko">아무도 다치지 않아요. 젤리에서 풀려난 이웃들은 잠옷 차림으로 집에 돌아간답니다.</p>
       <p class="story en" lang="en">Nobody gets hurt. Neighbours rescued from their jelly shells simply walk home in their pajamas.</p>
       <ul class="facts ko" lang="ko">
-        <li style="--c:#62d96b">150개 레벨과 150화 만화 이야기</li>
+        <li style="--c:#62d96b">250개 레벨과 250화 만화 이야기, 1부 완결</li>
         <li style="--c:var(--red)">10레벨마다 기다리는 거대한 보스 젤리</li>
-        <li style="--c:var(--sun)">30레벨부터 오늘의 판과 끝없는 구조</li>
-        <li style="--c:var(--blue)">친구와 함께 구조, 컴퓨터와 대결 (베타)</li>
+        <li style="--c:var(--sun)">20레벨부터 10레벨마다 새 도전이 열려요</li>
+        <li style="--c:var(--blue)">친구 최대 4명과 대결, 둘이 함께 구조 (베타)</li>
+        <li style="--c:var(--violet)">구한 이웃이 모여 사는 우리 동네</li>
       </ul>
       <ul class="facts en" lang="en">
-        <li style="--c:#62d96b">150 levels and a 150-episode comic</li>
+        <li style="--c:#62d96b">250 levels and a 250-episode comic: part one complete</li>
         <li style="--c:var(--red)">A giant boss jelly every 10 levels</li>
-        <li style="--c:var(--sun)">A daily board and Endless Rescue from level 30</li>
-        <li style="--c:var(--blue)">Rescue with a friend, or race the computer (beta)</li>
+        <li style="--c:var(--sun)">A new challenge every ten levels from level 20</li>
+        <li style="--c:var(--blue)">Versus with up to 4 friends, co-op rescue for two (beta)</li>
+        <li style="--c:var(--violet)">A town where everyone you rescue lives</li>
       </ul>
       <div class="note">
         <h3 class="ko" lang="ko">약속</h3>
@@ -279,10 +290,34 @@ footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-
   </section>
 
   <section class="wrap town">
-    <h3 class="ko" lang="ko">이웃을 구하면 동네에 불이 켜져요</h3>
-    <h3 class="en" lang="en">Rescue neighbours, light up the town</h3>
-    <p class="ko" lang="ko">구한 이웃은 도감에 모이고, 많이 구할수록 가게가 다시 문을 열어요.</p>
-    <p class="en" lang="en">Everyone you rescue joins your album, and the more you save, the more shops open again.</p>
+    <h3 class="ko" lang="ko">구한 이웃이 모여 사는 우리 동네</h3>
+    <h3 class="en" lang="en">A town for everyone you rescue</h3>
+    <p class="ko" lang="ko">구한 이웃은 도감에 모이고 동네에 집을 지어요. 많이 구할수록 가게와 이웃 집이 다시 문을 열어요. 동네의 하루는 휴대폰 시계를 따라 아침부터 밤까지 흘러가요.</p>
+    <p class="en" lang="en">Everyone you rescue joins your album and moves into the town. The more you save, the more shops and homes open their doors again. The town's day follows your phone's clock, from morning till late at night.</p>
+    <ul class="life ko" lang="ko">
+      <li>낮에는 이웃들이 산책하고 장을 보고, 밤에는 창문 불이 하나씩 꺼지며 잠들어요.</li>
+      <li>비가 오면 우산을 쓰고, 눈이 오면 눈사람을 만들고 눈싸움을 해요.</li>
+      <li>봄꽃과 텃밭, 단풍, 겨울 눈밭까지 계절마다 동네가 달라져요.</li>
+      <li>이웃의 마을 요청을 들어주면 다리와 공공 건물이 생기고 가게가 커져요.</li>
+      <li>광장을 장식으로 꾸미고, 마을 등급이 오를수록 동네가 넓어져요.</li>
+      <li>가게 안에 들어가 주인과 손님을 만날 수 있어요.</li>
+    </ul>
+    <ul class="life en" lang="en">
+      <li>By day neighbours stroll and shop; at night the windows go dark one by one.</li>
+      <li>Umbrellas come out in the rain, and snow brings snowmen and snowball fights.</li>
+      <li>Spring blossom and gardens, autumn leaves and winter snow change the town.</li>
+      <li>Answer neighbours' requests to build a bridge and public buildings, and grow the shops.</li>
+      <li>Decorate the plaza, and watch the town spread as its grade goes up.</li>
+      <li>Step inside the shops to meet their owners and customers.</li>
+    </ul>
+    <div class="days" tabindex="0" role="group" aria-label="우리 동네 · The town">
+      <figure class="day"><img src="assets/town_day.webp" width="600" height="1043" loading="lazy" alt=""><figcaption><span class="ko" lang="ko">맑은 낮</span><span class="en" lang="en">A clear day</span></figcaption></figure>
+      <figure class="day"><img src="assets/town_rain.webp" width="600" height="1043" loading="lazy" alt=""><figcaption><span class="ko" lang="ko">비 오는 날</span><span class="en" lang="en">Rain</span></figcaption></figure>
+      <figure class="day"><img src="assets/town_snow.webp" width="600" height="1043" loading="lazy" alt=""><figcaption><span class="ko" lang="ko">눈 오는 날</span><span class="en" lang="en">Snow</span></figcaption></figure>
+      <figure class="day"><img src="assets/town_night.webp" width="600" height="1043" loading="lazy" alt=""><figcaption><span class="ko" lang="ko">밤</span><span class="en" lang="en">Night</span></figcaption></figure>
+      <figure class="day"><img src="assets/town_spring.webp" width="600" height="1043" loading="lazy" alt=""><figcaption><span class="ko" lang="ko">봄</span><span class="en" lang="en">Spring</span></figcaption></figure>
+      <figure class="day"><img src="assets/town_autumn.webp" width="600" height="1043" loading="lazy" alt=""><figcaption><span class="ko" lang="ko">가을</span><span class="en" lang="en">Autumn</span></figcaption></figure>
+    </div>
     <div class="crowd" aria-hidden="true">
       <i class="face" style="--x:0;--y:0"></i><i class="face" style="--x:1;--y:0"></i><i class="face" style="--x:2;--y:0"></i><i class="face" style="--x:3;--y:0"></i><i class="face" style="--x:4;--y:0"></i><i class="face" style="--x:5;--y:0"></i>
       <i class="face" style="--x:0;--y:1"></i><i class="face" style="--x:1;--y:1"></i><i class="face" style="--x:2;--y:1"></i><i class="face" style="--x:3;--y:1"></i><i class="face" style="--x:4;--y:1"></i><i class="face" style="--x:5;--y:1"></i>
