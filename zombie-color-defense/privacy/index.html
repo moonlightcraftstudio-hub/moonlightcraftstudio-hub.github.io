@@ -4,7 +4,7 @@
 <style>body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px 18px 60px;line-height:1.7;color:#2a1640;background:#fff8f0}h1{color:#7a3678;border-bottom:3px solid #f68c5c;padding-bottom:6px}h2{color:#4a2a6a;margin-top:1.8em}h3{color:#a0446a}a{color:#b0406a}hr{margin:48px 0;border:0;border-top:2px dashed #f68c5c}</style></head>
 <body>
 <h1>좀비 컬러 디펜스 개인정보처리방침</h1>
-<p><strong>시행일: 2026-11-05</strong> · 개발자: <strong>MOONLIGHT CRAFT</strong> · 문의: moonlight.craft.studio@gmail.com</p>
+<p><strong>시행일: 2026-11-14</strong> · 개발자: <strong>MOONLIGHT CRAFT</strong> · 문의: moonlight.craft.studio@gmail.com</p>
 <p><a href="#en">English version below</a></p>
 <p>MOONLIGHT CRAFT(이하 "개발자")는 모바일 게임 <strong>좀비 컬러 디펜스</strong>(패키지명 <code>com.moonlightcraft.zombiecolordefense</code>, 이하 "게임")를 제공합니다. 이 방침은 게임이 어떤 정보를 어떻게 처리하는지 설명합니다.</p>
 <h2>1. 개발자가 직접 수집하는 개인정보: 없음 (선택 기능인 경주 기록 공유 2-6, 친구와 함께 하기 2-7 제외)</h2>
@@ -25,7 +25,7 @@
 </ul>
 <h3>2-2. 결제: Google Play 결제 시스템 (Google LLC)</h3>
 <ul>
-<li>목적: 인앱 상품('광고 제거', 코인 꾸러미, 스타터 번들, 이어하기 꾸러미)의 결제와 구매 확인.</li>
+<li>목적: 인앱 상품('광고 제거', 꾸미기 상품 등)의 결제와 구매 확인.</li>
 <li>항목: 결제는 전부 Google Play가 처리합니다. 개발자는 카드 번호나 결제 수단 정보를 받지 않습니다. 게임은 구매가 유효한지 확인하려고 구매 내역(상품 ID, 구매 토큰, 구매 상태)을 조회합니다.</li>
 <li>결제 연동에는 Unity In-App Purchasing(Unity Technologies)이 쓰입니다. Unity의 안내에 따르면 이 SDK는 결제 기능 제공과 분석을 위해 구매 내역, 기기·설치 식별자, 대략적인 위치(IP 기반, 일시적), 충돌·진단 정보를 Unity로 전송합니다. 이 정보는 제3자에게 공유되지 않습니다. 자세한 내용: <a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></li>
 </ul>
@@ -58,9 +58,9 @@
 </ul>
 <h3>2-7. 선택 기능: 친구와 함께 하기 (Unity Gaming Services, Unity Technologies)</h3>
 <ul>
-<li>목적: 방 코드로 친구를 만나 실시간으로 협동하거나 대결하기. 이용자가 방을 만들거나 코드를 넣을 때만 동작합니다.</li>
-<li>항목: 자동으로 만들어지는 익명 플레이어 ID(Unity Authentication), 방 코드와 연결 정보(Unity Lobby), 연결 중의 IP 주소(대략적인 위치 추정에 쓰일 수 있음)와 게임 입력(Unity Relay), Unity가 서비스 운영에 쓰는 사용량·성능 진단 정보. 이름, 이메일, Google 계정은 보내지 않습니다.</li>
-<li><strong>공개 범위:</strong> 게임 입력, 공격과 승패 같은 진행 상황, 미리 정해진 신호(네 차례!, 잠깐!, 고마워! 등)는 같은 방의 친구 기기로 전달됩니다. 자유롭게 글을 쓰거나 말하는 기능은 없습니다.</li>
+<li>목적: 열린 방 목록에서 방을 만들거나 골라 들어가 실시간으로 협동하거나 대결하기. 이용자가 방 목록을 열 때만 동작합니다.</li>
+<li>항목: 자동으로 만들어지는 익명 플레이어 ID(Unity Authentication), 방 정보(게임이 정한 방 이름 번호, 놀이 종류, 방장이 정한 숫자 4자리 비밀번호)와 연결 정보(Unity Lobby), 연결 중의 IP 주소(대략적인 위치 추정에 쓰일 수 있음)와 게임 입력(Unity Relay), Unity가 서비스 운영에 쓰는 사용량·성능 진단 정보. 이름, 이메일, Google 계정은 보내지 않습니다.</li>
+<li><strong>공개 범위:</strong> 방 목록에는 방 이름(동네 색과 번호), 놀이 종류, 인원, 비밀번호가 걸렸는지만 보입니다. 같은 방 사람에게는 방에 들어올 때마다 게임이 뽑는 별명(저장하지 않음), 대결 트로피 단계, 준비 여부, 게임 입력, 공격과 승패 같은 진행 상황, 미리 정해진 말과 표정(안녕하세요!, 네 차례!, ^^ 등)이 전달됩니다. 자유롭게 글을 쓰거나 말하는 기능은 없습니다.</li>
 <li>저장: 게임 입력은 서버를 거쳐 전달될 뿐 개발자가 저장하지 않습니다. 방 정보는 연결되거나 취소하면 지웁니다. 개발자는 Unity 대시보드에서 익명 ID와 사용량 통계를 볼 수 있습니다.</li>
 <li>Unity의 개인정보 처리방침: <a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></li>
 </ul>
@@ -91,14 +91,14 @@
 <h2>6. 이용자의 권리</h2>
 <ul>
 <li>맞춤 광고 동의는 게임 내 개인정보 옵션이나 Android 광고 설정에서 언제든지 바꾸거나 철회할 수 있습니다.</li>
-<li>개발자는 이름이나 이메일로 사용자를 알아볼 수 있는 정보를 보유하지 않습니다. 분석과 오류 보고, 경주 기록 공유는 게임 설정에서 끌 수 있습니다. 친구와 함께 하기는 방을 만들거나 코드를 넣을 때만 동작합니다. 모두의 구조에는 끄는 설정이 없습니다(2-8). Google이 처리한 데이터는 <a href="https://myaccount.google.com">https://myaccount.google.com</a> 에서 관리할 수 있습니다.</li>
+<li>개발자는 이름이나 이메일로 사용자를 알아볼 수 있는 정보를 보유하지 않습니다. 분석과 오류 보고, 경주 기록 공유는 게임 설정에서 끌 수 있습니다. 친구와 함께 하기는 방 목록을 열 때만 동작합니다. 모두의 구조에는 끄는 설정이 없습니다(2-8). Google이 처리한 데이터는 <a href="https://myaccount.google.com">https://myaccount.google.com</a> 에서 관리할 수 있습니다.</li>
 <li>궁금한 점은 아래로 문의해 주세요.</li>
 </ul>
 <h2>7. 안전성 확보 조치</h2>
 <p>제3자 SDK와의 통신은 암호화(HTTPS/TLS)되고, 친구와 함께 하기의 연결도 암호화(DTLS)됩니다. 개발자는 자체 서버를 운영하지 않습니다. 경주 기록은 Firebase에 저장되며, 각 이용자는 자기 기록만 쓰고 지울 수 있습니다. 모두의 구조 합계는 정해진 범위 안에서 더하기만 할 수 있습니다.</p>
 <h2>8. 개인정보 보호책임자 및 문의</h2>
 <ul>
-<li>개발자: MOONLIGHT CRAFT</li>
+<li>개발자: MOONLIGHT CRAFT (개인 개발자 {DEVELOPER_LEGAL_NAME})</li>
 <li>이메일: moonlight.craft.studio@gmail.com</li>
 </ul>
 <h2>9. 방침의 변경</h2>
@@ -106,7 +106,7 @@
 <hr />
 <p><a id="en"></a></p>
 <h1>Zombie Color Defense Privacy Policy</h1>
-<p><strong>Effective date: 2026-11-05</strong> · Developer: <strong>MOONLIGHT CRAFT</strong> · Contact: moonlight.craft.studio@gmail.com</p>
+<p><strong>Effective date: 2026-11-14</strong> · Developer: <strong>MOONLIGHT CRAFT</strong> · Contact: moonlight.craft.studio@gmail.com</p>
 <p>MOONLIGHT CRAFT ("we") publishes the mobile game <strong>Zombie Color Defense</strong> (package <code>com.moonlightcraft.zombiecolordefense</code>, the "Game"). This policy explains what information the Game handles and how.</p>
 <h2>1. Personal data we collect: none, apart from optional race sharing (2-6) and Play Together (2-7)</h2>
 <ul>
@@ -126,7 +126,7 @@
 </ul>
 <h3>2-2. Payments: Google Play Billing (Google LLC)</h3>
 <ul>
-<li>Purpose: processing and verifying in-app purchases ("Remove Ads", coin packs, the starter bundle and the continue pack).</li>
+<li>Purpose: processing and verifying in-app purchases (such as "Remove Ads" and cosmetic items).</li>
 <li>Data: all payments are processed by Google Play, and we never receive your card or payment details. The Game reads your purchase records (product ID, purchase token and state) to confirm the purchase.</li>
 <li>The purchase integration uses Unity In-App Purchasing (Unity Technologies). According to Unity, this SDK sends purchase history, device and installation identifiers, approximate location (IP-based, ephemeral), and crash and diagnostic data to Unity, for app functionality and analytics. This data is not shared with third parties. Details: <a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></li>
 </ul>
@@ -159,9 +159,9 @@
 </ul>
 <h3>2-7. Optional: Play Together with a friend (Unity Gaming Services, Unity Technologies)</h3>
 <ul>
-<li>Purpose: meeting a friend with a room code to play together or against each other live. It only runs when you open a room or enter a code.</li>
-<li>Data: an automatically created anonymous player ID (Unity Authentication), the room code and connection details (Unity Lobby), your IP address during the connection (which may be used to estimate approximate location) and your game inputs (Unity Relay), and usage and performance diagnostics Unity uses to run the service. No name, email or Google account is sent.</li>
-<li><strong>Who sees it:</strong> your game inputs, your progress such as attacks and results, and preset signals (Your turn!, Wait!, Thanks! and so on) reach your friend's device in the same room. There is no free text or voice.</li>
+<li>Purpose: opening or joining a room in the open room list to play together or against each other live. It only runs when you open the room list.</li>
+<li>Data: an automatically created anonymous player ID (Unity Authentication), the room details (a room name and number chosen by the game, the kind of play, and a four-digit password the host sets) and connection details (Unity Lobby), your IP address during the connection (which may be used to estimate approximate location) and your game inputs (Unity Relay), and usage and performance diagnostics Unity uses to run the service. No name, email or Google account is sent.</li>
+<li><strong>Who sees it:</strong> the room list shows a room's name (a street colour and a number), the kind of play, how many are in and whether it has a password. People in the same room see a nickname the game draws each time you enter (not kept), your versus trophy step, whether you are ready, your game inputs, your progress such as attacks and results, and preset lines and faces (Hello!, Your turn!, ^^ and so on). There is no free text or voice.</li>
 <li>Storage: game inputs pass through the servers and we do not store them. Room details are deleted once you connect or cancel. We can see anonymous IDs and usage statistics in the Unity dashboard.</li>
 <li>Unity's privacy policy: <a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></li>
 </ul>
@@ -197,7 +197,7 @@
 <h2>7. Security</h2>
 <p>Communication with third-party SDKs is encrypted (HTTPS/TLS), and the Play Together connection is encrypted too (DTLS). We do not operate our own servers. Race runs are stored in Firebase, and each player can write and remove only their own run. Rescue for All totals can only be increased, within a set limit.</p>
 <h2>8. Contact</h2>
-<p>MOONLIGHT CRAFT · moonlight.craft.studio@gmail.com</p>
+<p>MOONLIGHT CRAFT ({DEVELOPER_LEGAL_NAME}) · moonlight.craft.studio@gmail.com</p>
 <h2>9. Changes</h2>
 <p>If this policy changes, we will post the update on this page and revise the effective date.</p>
 </body></html>
