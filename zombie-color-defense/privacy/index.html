@@ -4,7 +4,7 @@
 <style>body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px 18px 60px;line-height:1.7;color:#2a1640;background:#fff8f0}h1{color:#7a3678;border-bottom:3px solid #f68c5c;padding-bottom:6px}h2{color:#4a2a6a;margin-top:1.8em}h3{color:#a0446a}a{color:#b0406a}hr{margin:48px 0;border:0;border-top:2px dashed #f68c5c}</style></head>
 <body>
 <h1>좀비 컬러 디펜스 개인정보처리방침</h1>
-<p><strong>시행일: 2026-11-14</strong> · 개발자: <strong>MOONLIGHT CRAFT</strong> · 문의: moonlight.craft.studio@gmail.com</p>
+<p><strong>시행일: 2026-11-15</strong> · 개발자: <strong>MOONLIGHT CRAFT</strong> · 문의: moonlight.craft.studio@gmail.com</p>
 <p><a href="#en">English version below</a></p>
 <p>MOONLIGHT CRAFT(이하 "개발자")는 모바일 게임 <strong>좀비 컬러 디펜스</strong>(패키지명 <code>com.moonlightcraft.zombiecolordefense</code>, 이하 "게임")를 제공합니다. 이 방침은 게임이 어떤 정보를 어떻게 처리하는지 설명합니다.</p>
 <h2>1. 개발자가 직접 수집하는 개인정보: 없음 (선택 기능인 경주 기록 공유 2-6, 친구와 함께 하기 2-7 제외)</h2>
@@ -73,6 +73,17 @@
 <li><strong>공개 범위:</strong> 전체 합계와 참여 인원만 모든 플레이어에게 보입니다. 내가 구한 수는 내 기기에만 저장됩니다.</li>
 <li>저장 위치: Google Cloud Firestore.</li>
 </ul>
+<h3>2-9. 게임 설정 받기: Firebase Remote Config (Google LLC)</h3>
+<ul>
+<li>목적: 앱을 새로 올리지 않고 게임 설정(친구와 함께 하기 잠시 멈춤, 광고 사이의 간격, 스토어 별점 창을 묻는 간격 등)을 바꾸기.</li>
+<li>항목: 자동으로 만들어지는 Firebase 설치 ID, 앱 버전, 기기의 언어·국가 같은 설정을 고르는 데 쓰는 값. 이름, 이메일, 광고 ID는 보내지 않습니다.</li>
+<li>동작: 게임을 켤 때와 앱으로 돌아올 때(한 시간에 한 번까지) 설정을 받아 옵니다. 게임 진행이나 기록은 보내지 않습니다. "분석·오류 보고" 설정과는 별개입니다.</li>
+<li>Google의 처리 방식: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li>
+</ul>
+<h3>2-10. 스토어 별점 창 (Google Play)</h3>
+<ul>
+<li>보스를 처음 깬 뒤 가끔 Google Play의 별점·리뷰 창이 뜹니다. 창은 Google Play가 보여 주고 처리하며, 남긴 별점과 리뷰는 Google Play 정책에 따라 공개됩니다. 개발자는 이 창에서 무엇을 골랐는지 받지 않습니다.</li>
+</ul>
 <h2>3. 보유 기간 및 파기</h2>
 <ul>
 <li>기기에 저장된 데이터는 사용자가 앱을 삭제하거나 앱 데이터를 지우면 즉시 삭제됩니다.</li>
@@ -106,7 +117,7 @@
 <hr />
 <p><a id="en"></a></p>
 <h1>Zombie Color Defense Privacy Policy</h1>
-<p><strong>Effective date: 2026-11-14</strong> · Developer: <strong>MOONLIGHT CRAFT</strong> · Contact: moonlight.craft.studio@gmail.com</p>
+<p><strong>Effective date: 2026-11-15</strong> · Developer: <strong>MOONLIGHT CRAFT</strong> · Contact: moonlight.craft.studio@gmail.com</p>
 <p>MOONLIGHT CRAFT ("we") publishes the mobile game <strong>Zombie Color Defense</strong> (package <code>com.moonlightcraft.zombiecolordefense</code>, the "Game"). This policy explains what information the Game handles and how.</p>
 <h2>1. Personal data we collect: none, apart from optional race sharing (2-6) and Play Together (2-7)</h2>
 <ul>
@@ -173,6 +184,17 @@
 <li>Connection: the Game talks to Google's servers, so your IP address reaches Google and is handled under Google's policies. We do not store this number together with an IP address or device.</li>
 <li><strong>Who sees it:</strong> only the overall total and the number of players are shown to all players. Your own count stays on your device.</li>
 <li>Stored in: Google Cloud Firestore.</li>
+</ul>
+<h3>2-9. Game settings: Firebase Remote Config (Google LLC)</h3>
+<ul>
+<li>Purpose: to change game settings without a new release (pausing play with friends, the spacing between ads, how often the store rating card may appear, and similar).</li>
+<li>Data: an automatically created Firebase installation ID, the app version, and values used to pick settings such as the device's language and country. No name, email or advertising ID is sent.</li>
+<li>How it works: the Game fetches the settings when it starts and when you come back to it (at most once an hour). It sends no game progress or records. It does not depend on the "Analytics and error reports" setting.</li>
+<li>Google's privacy information: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li>
+</ul>
+<h3>2-10. Store rating card (Google Play)</h3>
+<ul>
+<li>After you beat a boss for the first time, Google Play's rating and review card may appear now and then. Google Play shows and handles the card, and ratings and reviews are public under Google Play's policies. We do not receive what you choose on it.</li>
 </ul>
 <h2>3. Retention and deletion</h2>
 <ul>
