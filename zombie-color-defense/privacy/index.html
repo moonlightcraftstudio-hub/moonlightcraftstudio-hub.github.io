@@ -77,7 +77,7 @@
 <ul>
 <li>목적: 앱을 새로 올리지 않고 게임 설정(친구와 함께 하기 잠시 멈춤, 광고 사이의 간격, 스토어 별점 창을 묻는 간격 등)을 바꾸기.</li>
 <li>항목: 자동으로 만들어지는 Firebase 설치 ID, 앱 버전, 기기의 언어·국가 같은 설정을 고르는 데 쓰는 값. 이름, 이메일, 광고 ID는 보내지 않습니다.</li>
-<li>동작: 게임을 켤 때와 앱으로 돌아올 때(한 시간에 한 번까지) 설정을 받아 옵니다. 게임 진행이나 기록은 보내지 않습니다. "분석·오류 보고" 설정과는 별개입니다.</li>
+<li>동작: 게임을 켤 때와 앱으로 돌아올 때 설정을 받아 오고, 게임이 켜져 있는 동안 설정이 바뀌면 바로 받기 위해 Google 서버와 연결을 유지합니다. 게임 진행이나 기록은 보내지 않습니다. "분석·오류 보고" 설정과는 별개입니다.</li>
 <li>Google의 처리 방식: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li>
 </ul>
 <h3>2-10. 스토어 별점 창 (Google Play)</h3>
@@ -189,7 +189,7 @@
 <ul>
 <li>Purpose: to change game settings without a new release (pausing play with friends, the spacing between ads, how often the store rating card may appear, and similar).</li>
 <li>Data: an automatically created Firebase installation ID, the app version, and values used to pick settings such as the device's language and country. No name, email or advertising ID is sent.</li>
-<li>How it works: the Game fetches the settings when it starts and when you come back to it (at most once an hour). It sends no game progress or records. It does not depend on the "Analytics and error reports" setting.</li>
+<li>How it works: the Game fetches the settings when it starts and when you come back to it, and keeps a connection to Google's servers open while it runs so that a changed setting arrives at once. It sends no game progress or records. It does not depend on the "Analytics and error reports" setting.</li>
 <li>Google's privacy information: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></li>
 </ul>
 <h3>2-10. Store rating card (Google Play)</h3>
