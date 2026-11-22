@@ -46,7 +46,7 @@
 <li>이용자가 로비의 '대결'에서 빠른 대결, 방 만들기, 코드로 들어가기를 누를 때만 동작합니다. 독고와 연습은 인터넷을 쓰지 않습니다.</li>
 <li>목적: 다른 이용자와 상대를 찾아 연결하고, 대결 중 서로의 행동을 전달하기.</li>
 <li>항목: 자동으로 만들어지는 익명 플레이어 ID(Unity Authentication), 방 정보(게임 버전, 게임이 정한 여섯 글자 방 코드)와 연결 정보(Unity Lobby), 연결 중의 IP 주소(대략적인 위치 추정에 쓰일 수 있음)와 게임 행동(Unity Relay), Unity가 서비스 운영에 쓰는 사용량 · 성능 진단 정보. 이름, 이메일, Google 계정은 보내지 않습니다.</li>
-<li><strong>공개 범위:</strong> 대결 상대에게는 꾼 고르기, 낸 카드의 족보와 점수, 고발 · 판돈 같은 대결 진행만 전달됩니다. 상대 이름은 '상대'로만 보이고, 자유롭게 글을 쓰거나 말하는 기능은 없습니다.</li>
+<li><strong>공개 범위:</strong> 대결 상대에게는 꾼 고르기, 고른 카드 장 수, 낸 카드와 그 족보 · 점수, 고발 · 판돈 같은 대결 진행, 미리 정해진 한마디(흠…, 잘 쳤다, 한 판 더? 등)만 전달됩니다. 상대 이름은 '상대'로만 보이고, 자유롭게 글을 쓰거나 말하는 기능은 없습니다. 상대의 한마디는 끌 수 있습니다.</li>
 <li>저장: 게임 행동은 서버를 거쳐 전달될 뿐 개발자가 저장하지 않습니다. 방 정보는 연결되거나 취소하면 지웁니다. 개발자는 Unity 대시보드에서 익명 ID와 사용량 통계를 볼 수 있습니다.</li>
 <li>Unity의 개인정보 처리방침: <a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></li>
 </ul>
@@ -134,7 +134,7 @@
 <li>It only runs when you tap Quick duel, Make a room or Join with a code under Duel in the lobby. Practice against Dokgo uses no internet.</li>
 <li>Purpose: finding and connecting an opponent, and passing each other's moves during a duel.</li>
 <li>Data: an automatically created anonymous player ID (Unity Authentication), the room details (the game version and a six-letter room code chosen by the game) and connection details (Unity Lobby), your IP address during the connection (which may be used to estimate approximate location) and your moves (Unity Relay), and usage and performance diagnostics Unity uses to run the service. No name, email or Google account is sent.</li>
-<li><strong>Who sees it:</strong> your opponent sees only the duel itself: your picks, the hands you play and their scores, your calls and raises. Your name shows only as "opponent", and there is no free text or voice.</li>
+<li><strong>Who sees it:</strong> your opponent sees only the duel itself: your picks, how many cards you have selected, the cards you play with their hand and score, your calls and raises, and preset lines (Hmm…, Well played, One more? and so on). Your name shows only as "opponent", there is no free text or voice, and you can turn the other player's lines off.</li>
 <li>Storage: moves pass through the servers and we do not store them. Room details are deleted once you connect or cancel. We can see anonymous IDs and usage statistics in the Unity dashboard.</li>
 <li>Unity's privacy policy: <a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></li>
 </ul>
