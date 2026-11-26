@@ -168,6 +168,10 @@ h2 { margin: 0; line-height: 1; }
 .mj .shot { border-color: #d9b46a; background: #0e0a0a; }
 .mj .reel h3 { color: #e8c06c; }
 .mj .reel video { border-color: #d9b46a; }
+/* two cuts of the opening side by side: the webtoon and the live-action */
+.pair { display: grid; gap: 22px; }
+.pair figure { margin: 0; min-width: 0; }
+.pair figcaption { margin-top: 14px; text-align: center; font: 700 15px/1.2 var(--pixel); color: #e8c06c; }
 
 footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-bottom, 0px)); }
 .foot { display: grid; gap: 14px; color: var(--lilac); font-size: 17px; }
@@ -197,6 +201,7 @@ footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-
   .shot.s3 { right: 0; top: 74px; transform: rotate(5deg); z-index: 1; }
   .shot.s4 { display: none; }
   .reel { padding-block: 40px 10px; }
+  .pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; }
   .days { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); overflow: visible; }
   .day { width: auto; }
 }
@@ -422,7 +427,10 @@ footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-
   <section class="wrap reel">
     <h3 class="ko" lang="ko">오프닝 15초</h3>
     <h3 class="en" lang="en">The opening, 15 seconds</h3>
-    <video controls playsinline preload="none" poster="assets/mj_opening.webp?v=20261121" aria-label="밑장 오프닝 · Mitjang opening"><source src="assets/mj_opening.mp4?v=20261121" type="video/mp4"></video>
+    <div class="pair">
+      <figure><video controls playsinline preload="none" poster="assets/mj_opening_webtoon.webp?v=20261126" aria-label="밑장 오프닝 웹툰판 · Mitjang opening, webtoon"><source src="assets/mj_opening_webtoon.mp4?v=20261126" type="video/mp4"></video><figcaption><span class="ko" lang="ko">웹툰판</span><span class="en" lang="en">Webtoon</span></figcaption></figure>
+      <figure><video controls playsinline preload="none" poster="assets/mj_opening_real.webp?v=20261126" aria-label="밑장 오프닝 실사판 · Mitjang opening, live-action"><source src="assets/mj_opening_real.mp4?v=20261126" type="video/mp4"></video><figcaption><span class="ko" lang="ko">실사판</span><span class="en" lang="en">Live-action</span></figcaption></figure>
+    </div>
   </section>
 </section>
 
