@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MOONLIGHT CRAFT</title>
-<meta name="description" content="달빛 아래에서 작은 게임을 만드는 MOONLIGHT CRAFT. 지금 만들고 있는 게임은 좀비 컬러 디펜스와 밑장입니다.">
+<meta name="description" content="달빛 아래에서 작은 게임을 만드는 MOONLIGHT CRAFT. Google Play에 나온 좀비 컬러 디펜스와 만들고 있는 밑장을 소개합니다.">
 <meta name="theme-color" content="#1c133a">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -127,6 +127,10 @@ h2 { margin: 0; line-height: 1; }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
 .btn { display: inline-block; padding: 14px 22px 17px; border-radius: 12px; font: 700 16px/1.1 var(--pixel); text-decoration: none; }
 .btn.off { background: linear-gradient(to bottom, #dfdaea 0 50%, var(--grey) 50% 100%); color: var(--ink); box-shadow: inset 0 -5px 0 var(--grey-lo); }
+/* the game's own green "go" button: the way forward, here to the store */
+.btn.go { background: linear-gradient(to bottom, var(--green-hi) 0 50%, var(--green) 50% 100%); color: var(--ink); box-shadow: inset 0 -5px 0 var(--green-lo), 0 4px 0 rgba(10, 6, 22, .45); transition: transform .08s, filter .08s; }
+.btn.go:hover { color: var(--ink); filter: brightness(1.08); }
+.btn.go:active { transform: translateY(2px); box-shadow: inset 0 -3px 0 var(--green-lo), 0 2px 0 rgba(10, 6, 22, .45); }
 
 /* screenshots: the feature graphic's tilted cards */
 .shots { min-width: 0; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 2px 16px; -webkit-overflow-scrolling: touch; }
@@ -248,8 +252,8 @@ footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-
 <main class="game" id="zombie-color-defense">
   <div class="wrap game-grid">
     <div class="about">
-      <p class="eyebrow ko" lang="ko">지금 만들고 있는 게임</p>
-      <p class="eyebrow en" lang="en">Now in the workshop</p>
+      <p class="eyebrow ko" lang="ko">새로 나온 게임</p>
+      <p class="eyebrow en" lang="en">Just out of the workshop</p>
       <h2>
         <img class="logo ko" lang="ko" src="assets/zcd_logo.webp" width="640" height="385" alt="좀비 컬러 디펜스">
         <span class="word en" lang="en"><span style="color:#62d96b">ZOMBIE</span><br><span style="color:var(--red)">CO</span><span style="color:var(--sun)">LOR</span> <span style="color:var(--blue)">DE</span><span style="color:var(--violet)">FE</span><span style="color:var(--red)">NSE</span></span>
@@ -296,11 +300,11 @@ footer { background: #150f24; padding-block: 28px max(28px, env(safe-area-inset-
         <small class="ko" lang="ko">전체이용가예요. 광고와 인앱 구매(광고 제거)가 있어요.</small>
         <small class="en" lang="en">Rated for all ages. Contains ads and an in-app purchase (Remove Ads).</small>
       </div>
-      <p class="status ko" lang="ko">지금 출시를 준비하고 있어요. 출시하면 여기에 Google Play 링크를 올릴게요.</p>
-      <p class="status en" lang="en">Getting ready for launch. The Google Play link goes here when it's out.</p>
+      <p class="status ko" lang="ko">2026년 11월 27일 Google Play에 정식&nbsp;출시했어요.</p>
+      <p class="status en" lang="en">Launched on Google Play in Korea first, 27&nbsp;November&nbsp;2026.</p>
       <div class="actions">
-        <span class="btn off ko" lang="ko">Google Play 곧 출시</span>
-        <span class="btn off en" lang="en">Coming to Google Play</span>
+        <a class="btn go ko" lang="ko" href="https://play.google.com/store/apps/details?id=com.moonlightcraft.zombiecolordefense&amp;hl=ko">Google Play에서 받기</a>
+        <a class="btn go en" lang="en" href="https://play.google.com/store/apps/details?id=com.moonlightcraft.zombiecolordefense&amp;hl=en">Get it on Google Play</a>
         <a class="ko" lang="ko" href="zombie-color-defense/privacy/">개인정보처리방침</a>
         <a class="en" lang="en" href="zombie-color-defense/privacy/">Privacy Policy</a>
       </div>
